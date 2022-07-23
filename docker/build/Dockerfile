@@ -2,7 +2,7 @@ FROM golang:1.17.5-bullseye as builder
 
 RUN mkdir $HOME/src && \
     cd $HOME && \
-    git clone --branch v2.6.2 https://github.com/qiniu/qshell.git && \
+    git clone --branch v2.8.0 https://github.com/qiniu/qshell.git && \
     cd qshell && \
     go install && \
     echo $PATH && \
