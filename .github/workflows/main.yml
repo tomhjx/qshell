@@ -39,6 +39,6 @@ jobs:
           
       - name: Publish Docker Image
         run: |
-          DOCKER_RELEASE_TAG="tomhjx/qshell:2.8.0"
+          DOCKER_RELEASE_TAG="tomhjx/qshell:2.8.0.1"
           docker buildx build --platform linux/amd64,linux/arm64 ${{ github.workspace }}/docker/build -t $DOCKER_RELEASE_TAG --push
 
