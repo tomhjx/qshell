@@ -14,3 +14,5 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates \
     && update-ca-certificates
 COPY --from=builder /go/bin/qshell /usr/local/bin/qshell
+ENTRYPOINT ["/entrypoint.sh"]
+CMD ["-h"]
