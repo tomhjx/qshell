@@ -14,5 +14,9 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends ca-certificates \
     && update-ca-certificates
 COPY --from=builder /go/bin/qshell /usr/local/bin/qshell
+COPY entrypoint.sh /
+RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    echo "Asia/Shanghai" > /etc/timezone \
+    chmod +x /entrypoint.sh 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["-h"]
